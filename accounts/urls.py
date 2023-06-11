@@ -7,8 +7,6 @@ urlpatterns = [
     path('contact', views.contact_form, name="contact"),
     path('register/', views.Register.as_view(), name='register'),
     path('update_profil/', views.UpdateProfile.as_view(), name='update_profile'),
-    path('my_profile/', cache_page(60*10)(views.UserProfile.as_view()), name='my_profile'),
-
     path('posts/', views.PostListView.as_view(), name='post-list'),
     path('posts/<int:pk>', cache_page(60*10)(views.PostDetailView.as_view()), name='post-detail'),
     path('posts/create', views.PostCreateView.as_view(), name='post-create'),
